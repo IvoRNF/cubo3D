@@ -1,0 +1,85 @@
+
+
+body{
+background-color:black;
+}
+
+
+.container{
+  perspective: 500px;
+  perspective-origin: 50% 50%;
+  position: absolute;
+  left:50%;
+  top:10%;
+  
+}
+
+.cubo{
+  width: 100px;
+  height:100px;
+  transform-style: preserve-3d; 
+  position: relative;
+}
+
+
+.cubo div
+{
+ 
+  width:100%; 
+  height:100%;
+  opacity: 0.5;
+}
+
+.top{
+  transform-origin: top center;
+  background-color: yellow;
+  transform: rotateX(90deg); 
+}
+
+.left{
+
+  background-color: greenyellow;
+  transform-origin: top left; 
+  transform: rotateX(180deg) rotateY(90deg);
+}
+.front {
+  background-color: lightseagreen;
+  transform-origin: top center;
+  transform: translateZ(100px) translateY(-500px);
+ 
+}
+.back{
+ background-color: lightsalmon;
+  transform-origin: top center;
+  transform:translateY(-400px);
+
+
+}
+.right {
+    background-color: greenyellow;
+  transform-origin: top right; 
+  transform:  translateY(-200px) rotateX(180deg) rotateY(-90deg);
+
+
+}
+
+.bottom{
+   transform-origin: top center;
+  background-color: limegreen;
+  transform: translateY(-100px) rotateX(90deg); 
+}
+
+
+@keyframes rodar 
+{
+  from {
+     transform: translateY(0px) rotateY(0deg) rotateX(0deg) ;
+  }
+  to {
+    transform: translateY(300px) rotateY(360deg) rotateX(360deg);
+  }
+}
+
+.cubo{
+  animation: rodar 5s linear infinite;
+}
